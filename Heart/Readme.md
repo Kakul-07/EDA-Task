@@ -1,81 +1,40 @@
-* Heart Disease EDA and Feature Engineering *
+# Heart Disease EDA
+## About the Project
+This project is based on the Heart Disease dataset.
 
-About the Project
-This project performs Exploratory Data Analysis (EDA) and Feature Engineering on a Heart Disease dataset.
-The main purpose is to understand the dataset, identify data quality issues, find patterns in the data, visualize important relationships, detect outliers, and prepare the dataset for further machine learning work.
+## Libraries Used
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
 
-Dataset: The dataset contains 918 records and 12 columns.
-The main columns are:
-* Age – Age of the patient
-* Sex – Gender of the patient
-* ChestPainType – Type of chest pain
-* RestingBP – Resting blood pressure
-* Cholesterol – Cholesterol level
-* FastingBS – Fasting blood sugar indicator
-* RestingECG – Resting ECG result
-* MaxHR – Maximum heart rate achieved
-* ExerciseAngina – Exercise-induced angina
-* Oldpeak – ST depression
-* ST_Slope – Slope of the ST segment
-* HeartDisease – Target variable
+## Work Done
+1. Loaded and checked the dataset.
+2. Checked rows, columns, data types and basic statistics.
+3. Checked missing values and duplicate rows.
+4. Checked unique values and categories.
+5. Checked invalid values such as zero RestingBP and Cholesterol.
+6. Studied HeartDisease distribution.
+7. Analysed gender, chest pain, RestingECG, ExerciseAngina, ST_Slope and FastingBS.
+8. Used histograms and boxplots for numerical features.
+9. Checked correlation between numerical features.
+10. Detected outliers using the IQR method.
+11. Cleaned invalid zero values using median replacement.
+12. Created AgeGroup, MaxHR_Percent, BPCategory and CholesterolCategory.
+13. Encoded categorical features using one-hot encoding.
+14. Checked the final dataset.
 
-Technologies Used
-* Python
-* NumPy
-* Pandas
-* Matplotlib
-* Seaborn
-* Jupyter Notebook
+## Dataset:  The dataset contains 918 rows and 12 columns.
 
-Project Steps
-1. Data Understanding:
-* Loaded the dataset
-* Checked the number of rows and columns
-* Checked column names and data types
-* Generated statistical summaries
-* Checked categorical values
+The target column is `HeartDisease`.
+- `0` = No heart disease
+- `1` = Heart disease
 
-2. Data Cleaning:
-* Missing values
-* Duplicate records
-* Invalid categorical values
-* Invalid binary values
-* Suspicious numerical values
-RestingBP = 0 and Cholesterol = 0 were treated as invalid placeholder values. They were converted to missing values and replaced using the median.
+## Important Data Cleaning
+`RestingBP = 0` and `Cholesterol = 0` were treated as invalid measurements for this analysis. They were replaced with missing values and then filled using the median.
+IQR outliers were only identified.
 
-3. Outlier Analysis:
-The IQR method was used to identify statistical outliers.
-Outliers were not automatically removed because extreme medical measurements can represent actual patient observations.
-The detected values were inspected separately from invalid values.
-
-4. Exploratory Data Analysis:
-* Heart disease distribution
-* Gender distribution
-* Gender vs Heart Disease
-* Chest Pain Type distribution
-* Chest Pain Type vs Heart Disease
-* Resting ECG vs Heart Disease
-* Exercise Angina vs Heart Disease
-* ST Slope vs Heart Disease
-* Numerical feature distributions
-* Boxplots
-* Age vs Maximum Heart Rate
-* Correlation matrix
-* Correlation heatmap
-
-5. Feature Engineering:
-* AgeGroup
-* MaxHR_Percent
-* BPCategory
-* CholesterolCategory
-Categorical features were also converted into numerical values using one-hot encoding.
-
-Key Observations:
-* The dataset contains both heart disease and non-heart disease cases.
-* Male patients are more represented than female patients.
-* ASY is the most common chest pain type.
-* Chest pain type shows differences in heart disease distribution.
-* Age and maximum heart rate show a visible relationship.
-* Several numerical features contain statistical outliers.
-* Zero values in RestingBP and Cholesterol required special treatment.
-* The target variable does not have a severe class imbalance.
+## Files
+- `Heart.csv` - dataset
+- `Heart_Disease_EDA_Clean.ipynb` - EDA notebook
+- `README_Heart_Disease_EDA.md` - project information
